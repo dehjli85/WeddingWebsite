@@ -1,0 +1,31 @@
+<% if flash[:notice] %>
+	<% if flash[:notice].eql?('No RSVP match found!') %>
+		<div class="alert alert-danger" role="alert" style="text-align:center;">  
+	  		<%= flash[:notice] %>
+		</div>
+	<% end %>
+<% end %>
+
+<div class="well">
+	<p>The site is currently locked.  To unlock, please type in the password:</p>	
+</div>
+
+<div class="col-md-offset-3 col-md-6" style="text-align:center">
+	<%= form_tag '/unlock_post', :html=>{:class=>'form-horizontal', :role=>'form'} do%>
+
+		<div class="form-group">
+			<label for="password" class="col-sm-4 control-label">Password:</label>
+			<div class="col-sm-8">
+				<%= password_field_tag :password, nil, :class=>'form-control', :id=>'password' %>
+				
+			</div>
+		</div>				
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default">Submit</button>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+

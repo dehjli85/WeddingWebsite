@@ -1,6 +1,7 @@
 class MainController < ApplicationController
 
 	skip_before_action :require_login
+	skip_before_action :unlock_site, only: [:unlock, :unlock_post]
 
 	def index
 
@@ -44,5 +45,18 @@ class MainController < ApplicationController
 
 	def rsvp
 		flash[:notice] = nil
+	end
+
+	def unlock
+
+	end
+
+	def unlock_post
+		if(params[:password].eql?('basil0213'))
+			session[:unlocked] = true
+			redirect_to '/'
+		else
+			render 'unlock'
+		end
 	end
 end

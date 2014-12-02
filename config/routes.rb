@@ -73,5 +73,7 @@ Rails.application.routes.draw do
   get 'login' => 'users#login'
   post 'post_login' => 'users#post_login'
   get 'logout' => 'users#logout'
+  get 'unlock' => 'main#unlock'
+  post 'unlock_post' => 'main#unlock_post'
 
 end
