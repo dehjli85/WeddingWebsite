@@ -1,0 +1,41 @@
+<% if !flash[:notice].nil? %>
+
+		<div class="alert alert-success" style="text-align:center">
+				<%= flash[:notice] %>
+		</div>
+	
+<% end %>
+<% if !flash[:error].nil? %>
+
+		<div class="alert alert-error" style="text-align:center">
+				<%= flash[:error] %>
+		</div>
+	
+<% end %>
+
+<div class="col-md-offset-3 col-md-6" style="text-align:center">
+
+	<%= form_for(:user, :url => {:action => :post_login}, :html => {:class=>"form-horizontal", :role=>'form'}) do |f| %>
+	
+		<div class="form-group">
+			<label for="email" class="col-sm-4 control-label" for="email">Email:</label>
+			<div class="col-sm-8">
+				<%= f.text_field(:email, :id =>"email", :class=>'form-control', :type=>'search') %>
+	    		
+	    	</div>
+	  	</div>	
+	  	<div class="form-group">
+			<label class="col-sm-4 control-label" for="password">Password:</label>
+			<div class="col-sm-8">
+				<%= f.password_field(:password, :id =>"password", :class=>'form-control', :type=>'password') %>
+	    		
+	    	</div>
+	  	</div>			  	
+	  	<div class="form-group">
+	    	<div class="col-sm-offset-2 col-sm-10">	
+	    		<%= submit_tag "Log In", :class=>"btn btn-primary" %>			      		
+	    	</div>
+	  	</div>
+	<% end %>
+	
+</div>

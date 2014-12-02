@@ -1,14 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WeddingWebsite</title>
+  <title>Katie and Dennis' Wedding Website</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body class="home page page-id-34 page-template page-template-template-fullwidth-php">
+	<!-- 960 Container -->
+	<div class="container">	
+		<div class="row header-row">
 
+			<div class="col-md-4"></div>
+			<div class="col-md-8">
+				<ul id="menu-main-menu" class="sf-menu light sf-js-enabled sf-shadow" style="float:right;">
+					<li id="menu-item-171" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/our_story"><strong>OUR STORY</strong></a></li>
+					<li id="menu-item-138" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/photos"><strong>PHOTOS</strong></a></li>
+					<li id="menu-item-142" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/the_big_day"><strong>THE BIG DAY</strong></a></li>
+					<li id="menu-item-705" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/wedding_party"><strong>WEDDING PARTY</strong></a></li>
+					<li id="menu-item-141" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/lodging"><strong>LODGING</strong></a></li>
+					<li id="menu-item-749" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/faqs"><strong>FAQs</strong></a></li>
+					<li id="menu-item-144" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/registry"><strong>REGISTRY</strong></a></li>
+					<li id="menu-item-144" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/rsvp"><strong>RSVP</strong></a></li>
+				</ul>	
+
+			</div>
+
+		</div>				
+
+		
+
+		<div class="row main-content">
+			<%= yield %>
+		</div>
+
+		<div class="row footer-row">
+
+		    <div class="col-md-3">
+		    	<div class="the_content post type-post hentry hybrid-excerpt clearfix footer-item">
+				    <div class="icon">
+				    	<a title="Our Story" target="_blank" href="/our_story">
+				    		<img src="/assets/Story_Icon.jpg" alt="Our Story">
+				    	</a>
+				    </div>
+				    <h4><a title="Our Story" target="_blank" href="/our_story">Our Story</a></h4>
+				    <p>Tennis Instructor. Student. <br> Lovers. </p>
+				</div>
+		    </div>			    
+	     
+	    	<div class="col-md-3">
+		    	<div class="the_content post type-post hentry hybrid-excerpt clearfix footer-item">
+				    <div class="icon">
+				    	<a title="The Big Event" target="_blank" href="/the_big_day">
+				    		<img src="/assets/BigDay_Icon.jpg" alt="The Big Event">
+				    	</a>
+				    </div>
+				    <h4><a title="The Big Event" target="_blank" href="/the_big_day">The Big Event</a></h4>
+				    <p>Let's get ready to ...<br> ...get married!</p>
+				</div>
+		    </div>			    
+		     
+		    <div class="col-md-3">
+		    	<div class="the_content post type-post hentry hybrid-excerpt clearfix footer-item">
+				    <div class="icon">
+				    	<a title="Travel Info" target="_blank" href="lodging">
+				    		<img src="/assets/Travel_Icon.jpg" alt="Travel Info">
+				    	</a>
+				    </div>
+				    <h4><a title="Travel Info" target="_blank" href="/lodging">Travel Info</a></h4>
+				    <p>All you need to know about <br>getting to the party!</p>
+				</div>
+		    </div>			    
+		     
+		    <div class="col-md-3">
+		    	<div class="the_content post type-post hentry hybrid-excerpt clearfix footer-item">
+				    <div class="icon">
+				    	<a title="Registry" target="_blank" href="registry">
+				    		<img src="/assets/Registry_Icon.jpg" alt="Registry">
+				    	</a>
+				    </div>
+				    <h4><a title="Registry" target="_blank" href="/registry">Registry</a></h4>
+				    <p>Gifts are appreciated, but not necessary. We care about you! </p>
+				</div>
+	    	</div>			    
+		</div>
 </body>
 </html>

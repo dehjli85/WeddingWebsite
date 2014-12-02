@@ -12,4 +12,59 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
  */
+
+
+ li {
+display: list-item;
+text-align: -webkit-match-parent;
+}
+
+.sf-menu > li > a strong {
+color: #596269;
+font-size: 13px;
+font-style: normal;
+font-weight: bold;
+text-transform: inherit;
+}
+
+a:visited {
+color: #7fa397;
+text-decoration: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+.sf-menu > li:hover{background: #FFFFFF;}
+
+.header-row{
+	margin-bottom: 0px;
+}
+
+.footer-item h4{
+	float:left;
+}
+
+.footer-item .icon{	
+	float: left;
+	margin: 0 10px 2px 0;	
+}
+
+.footer-item p{
+	clear: both;
+	margin: 8px 0 0 0;
+	text-align: left;
+	padding: 0px;
+}
+
+.bridal-party-image{
+	height:96px;
+	width:96px;
+}
+
+.main-content{
+	min-height: 500px;
+}

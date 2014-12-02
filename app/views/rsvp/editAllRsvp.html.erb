@@ -1,0 +1,46 @@
+<% if flash[:notice] %>
+  <% if flash[:notice].eql?('Error Saving!') %>
+    <div class="alert alert-danger" role="alert" style="text-align:center;">  
+        <%= flash[:notice] %>
+    </div>
+  <% end %>
+  <% if flash[:notice].eql?('Successfully Saved!') %>
+    <div class="alert alert-success" role="alert">  
+        <%= flash[:notice] %>
+    </div>
+  <% end %>
+<% end %>
+
+
+
+
+<%= form_for @rsvpSet, :url => '/rsvp/saveAllRsvp', :as => 'rsvpSet[rsvps]' do |f|%>
+  <div>
+    <a href="/rsvp/viewAllRsvp" style="margin-bottom:5px; margin-left:10px"  class="btn btn-default pull-right btn-xs">Cancel</a>
+    <button style="margin-bottom:5px; margin-left:10px" type="submit" class="btn btn-primary pull-right btn-xs">Save</button>
+  </div>
+
+  
+
+  <table class="table table-striped">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Confirmation Code</th>
+      <th>Attendance?</th>
+      <th>Meal Preference</th>
+    </tr>
+    <% f.object.rsvps.each do |rsvp| %>    
+
+      <%= f.fields_for rsvp.id.to_s, rsvp do |rsvp_form| %>      
+        <tr>
+          <td><%= rsvp_form.hidden_field :id %><%= rsvp_form.text_field :first_name %></td>
+          <td><%= rsvp_form.text_field :last_name %></td>
+          <td><%= rsvp_form.text_field :confirmation_code %></td>
+          <td><%= rsvp_form.select :attending, [[nil,nil], ['Yes','true'], ['No','false']] %></td>
+          <td><%= rsvp_form.select :meal_choice, [[nil,nil], ['Butter Basted Sea Bass','Fish'], ['Grilled Bistro Filet w/ sauce Bordelaise','Beef'], ['Mixed Mushroom Ravioli','Vegetarian']] %></td>        
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+<% end %>

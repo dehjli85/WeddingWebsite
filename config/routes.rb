@@ -53,4 +53,25 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root :to => 'main#index'
+  get 'the_big_day' => 'main#the_big_day'
+  get 'our_story' => 'main#our_story'
+  get 'photos' => 'main#photos'
+  get 'wedding_party' => 'main#wedding_party'
+  get 'lodging' => 'main#lodging'
+  get 'faqs' => 'main#faqs'
+  get 'registry' => 'main#registry'
+  get 'rsvp' => 'main#rsvp'
+  post 'rsvp/edit' => 'rsvp#edit'
+  get 'rsvp/new' => 'rsvp#new'
+  post 'rsvp/save' => 'rsvp#save'
+  get 'rsvp/saveSubmit' => 'rsvp#saveSubmit'
+  get 'rsvp/saveNewRsvp' => 'rsvp#saveNewRsvp'
+  get 'rsvp/viewAllRsvp' => 'rsvp#viewAllRsvp'
+  get 'rsvp/editAllRsvp' => 'rsvp#editAllRsvp'
+  post 'rsvp/saveAllRsvp' => 'rsvp#saveAllRsvp'
+  get 'login' => 'users#login'
+  post 'post_login' => 'users#post_login'
+  get 'logout' => 'users#logout'
+
 end

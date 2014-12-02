@@ -1,0 +1,27 @@
+<div>
+	<a style="margin-bottom:5px; margin-left:10px; color:white" type="button" class="btn btn-primary pull-right btn-xs" href="/rsvp/editAllRsvp">Edit</a>
+</div>
+<div>
+	<a style="margin-bottom:5px; margin-left:10px; color:white" type="button" class="btn btn-success pull-right btn-xs" href="/rsvp/new">Add</a>
+</div>
+
+<table class="table table-striped">
+  <tr>
+  	<th>First Name</th>
+  	<th>Last Name</th>
+  	<th>Confirmation Code</th>
+  	<th>Attendance?</th>
+  	<th>Meal Preference</th>
+  </tr>
+  <% if(@rsvps) %>
+  	<% @rsvps.each do |rsvp| %>
+  		<tr>
+  			<td><%= rsvp.first_name %></td>
+  			<td><%= rsvp.last_name %></td>
+  			<td><%= rsvp.confirmation_code %></td>
+  			<td><%= rsvp.attending ? 'Yes' : 'No' %></td>
+  			<td><%= case rsvp.meal_choice when 'Fish'; 'Butter Basted Sea Bass'; when 'Beef' ; 'Grilled Bistro Filet w/ sauce Bordelaise'; when 'Vegetarian' ; 'Mixed Mushroom Ravioli' end%></td>  			
+  		</tr>
+  	<% end %>
+  <% end %>
+</table>

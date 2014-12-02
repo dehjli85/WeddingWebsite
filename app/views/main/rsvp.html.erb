@@ -1,0 +1,44 @@
+<% if flash[:notice] %>
+	<% if flash[:notice].eql?('No RSVP match found!') %>
+		<div class="alert alert-danger" role="alert" style="text-align:center;">  
+	  		<%= flash[:notice] %>
+		</div>
+	<% end %>
+<% end %>
+
+<div class="well">
+	<p>We are excited to celebrate our wedding with our loved ones.  Please let us know if you will be able to join us for this momentous occassion by:</p>
+	<ol>
+		<li>Entering your last name below.</li>
+		<li>Entering the passcode written on your invite. <br /><small>If for some reason you misplaced or did not receive your invitation, don't hesitate to <a href="mailto://dennis.hj.li@gmail.com">email</a> us, so we can provide your passcode to you.</small></li>
+		<li>On the next page, you will be able let us know if you are able to attend, and what your meal preference is.</li>
+	</ol>	
+</div>
+
+<div class="col-md-offset-3 col-md-6" style="text-align:center">
+	<%= form_for :rsvp, :url => '/rsvp/edit', :html=>{:class=>'form-horizontal', :role=>'form'} do |f|%>
+
+	
+	
+		<div class="form-group">
+			<label for="inputLastName" class="col-sm-4 control-label">Last Name:</label>
+			<div class="col-sm-8">
+			<%= f.text_field :last_name, :type=>'search', :class=>'form-control', :id=>'inputLastName',  :placeholder=>'(i.e. Wang)' %>			
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputConfirmationCode" class="col-sm-4 control-label">Passcode:</label>
+			<div class="col-sm-8">
+				<%= f.text_field :confirmation_code, :type=>'search', :class=>'form-control', :id=>'inputConfirmationCode',  :placeholder=>'(i.e. 5115)' %>
+				
+			</div>
+		</div>		
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default">Search</button>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+
