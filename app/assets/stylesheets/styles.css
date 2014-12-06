@@ -1767,7 +1767,8 @@ and (max-width: 960) {
 		}
 		
 		.nav-hr{top: -20px;}
-								
+		
+		/*						
 		.twelve.content{
 			padding: 0 10px 0 20px !important
 			width: 99% !important;
@@ -1776,6 +1777,7 @@ and (max-width: 960) {
 		.post-thumbnail .aside, .post-excerpt{
 		    width: 99% !important;
 		}
+		*/
 		.tw-status{clear: both;}
 		
 		.single .my-avatar {padding: 20px 14px 5px 0;}
