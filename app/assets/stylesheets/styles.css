@@ -1218,7 +1218,7 @@ span.grid_btn, span.list_btn, span.hybrid_btn {margin-right: 3px; margin-top: 0p
 .sf-menu {display: inline-block; float: none; margin-bottom: -7px;}
 .navigation{text-align: center;}
 .es-carousel li{line-height: 0;}
-.sf-menu > li a span{display:; none;}
+.sf-menu > li a span{display: none;}
 .sf-menu > li > a strong{font-size: 18px;}
 .sf-menu li li:hover{background: #333 !important;}
 
