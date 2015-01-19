@@ -68,3 +68,11 @@ a{
 .main-content{
 	min-height: 500px;
 }
+
+dd{
+	margin-bottom: 15px;
+}
+
+ul.adronments{
+	list-style-type: square;
+}
