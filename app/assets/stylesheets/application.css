@@ -76,3 +76,14 @@ dd{
 ul.adronments{
 	list-style-type: square;
 }
+
+.footer-row {
+	width: 1130px;
+}
+@media (max-width: 992px) {
+
+	.col-md-3 {
+		width: 25%;
+		float: left;
+	}
+}
