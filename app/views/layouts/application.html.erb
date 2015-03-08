@@ -3,7 +3,7 @@
 <head>
   <title>Katie and Dennis' Wedding Website</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
@@ -33,7 +33,7 @@
 		<div class="row main-content">
 			<%= yield %>
 		</div>
-
+<!--
 		<div class="row footer-row">
 
 		    <div class="col-md-3">
@@ -84,5 +84,6 @@
 				</div>
 	    	</div>			    
 		</div>
+-->
 </body>
 </html>
