@@ -20,7 +20,7 @@
   			<td><%= rsvp.last_name %></td>
   			<td><%= rsvp.confirmation_code %></td>        
   			<td><%= case rsvp.attending when true; 'Yes'; when false ; 'No'; when nil ; '' end %></td>
-  			<td><%= case rsvp.meal_choice when 'Fish'; 'Butter Basted Sea Bass'; when 'Beef' ; 'Grilled Bistro Filet w/ sauce Bordelaise'; when 'Vegetarian' ; 'Mixed Mushroom Ravioli' end%></td>  			
+  			<td><%= case rsvp.meal_choice when 'Fish'; 'Butter Basted Sea Bass'; when 'Beef' ; 'Grilled Bistro Filet w/ sauce Bordelaise'; when 'Vegetarian' ; 'Mixed Mushroom Ravioli (Vegetarian)' end%></td>  			
   		</tr>
   	<% end %>
   <% end %>
