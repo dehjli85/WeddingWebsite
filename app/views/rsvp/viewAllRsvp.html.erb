@@ -18,8 +18,8 @@
   		<tr>
   			<td><%= rsvp.first_name %></td>
   			<td><%= rsvp.last_name %></td>
-  			<td><%= rsvp.confirmation_code %></td>
-  			<td><%= rsvp.attending ? 'Yes' : 'No' %></td>
+  			<td><%= rsvp.confirmation_code %></td>        
+  			<td><%= case rsvp.attending when true; 'Yes'; when false ; 'No'; when nil ; '' end %></td>
   			<td><%= case rsvp.meal_choice when 'Fish'; 'Butter Basted Sea Bass'; when 'Beef' ; 'Grilled Bistro Filet w/ sauce Bordelaise'; when 'Vegetarian' ; 'Mixed Mushroom Ravioli' end%></td>  			
   		</tr>
   	<% end %>

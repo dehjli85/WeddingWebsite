@@ -12,10 +12,10 @@ class RsvpController < ApplicationController
 		#If Matched Get all RSVPs with the same confirmation code, show edit page
 		rsvp = params[:rsvp]
 		
-		if !Rsvp.where(:last_name => rsvp[:last_name], :confirmation_code=>rsvp[:confirmation_code]).empty?
-
+		#if !Rsvp.where(:last_name => rsvp[:last_name], :confirmation_code=>rsvp[:confirmation_code]).empty?
+		if !Rsvp.where('lower(last_name) = ? AND lower(confirmation_code) = ?', rsvp[:last_name].downcase, rsvp[:confirmation_code].downcase).empty?
 			@rsvpSet = RsvpSet.new
-			@rsvpSet.rsvps = Rsvp.where(:confirmation_code => rsvp[:confirmation_code]).to_a
+			@rsvpSet.rsvps = Rsvp.where('lower(confirmation_code) = ?', rsvp[:confirmation_code].downcase).to_a
 
 		#If no match, return to the search page with error
 		else
@@ -65,8 +65,8 @@ class RsvpController < ApplicationController
 	def viewAllRsvp
 
 		#query database for all RSVPs
-		Rsvp.order('confirmation_code asc')
-		@rsvps = Rsvp.order(:confirmation_code)
+		Rsvp.order('last_name asc')
+		@rsvps = Rsvp.order(:last_name, :first_name)
 
 	end
 
@@ -75,6 +75,7 @@ class RsvpController < ApplicationController
 		@rsvpSet = RsvpSet.new
 
 		puts @rsvpSet
+
 		
 	end
 

@@ -23,6 +23,7 @@ class RsvpSet
   	end
 
   	def rsvps=(rsvp_array)  		
+      
   		@rsvps = Array.new
     	rsvp_array.each do |rsvp|    		
         		@rsvps << rsvp  		
@@ -31,11 +32,14 @@ class RsvpSet
 
   	def rsvps
      # your rsvp-find logic here
-    	@rsvps || Rsvp.all
+    	#@rsvps || Rsvp.all
+
+      @rsvps || Rsvp.order(:last_name, :first_name)
   	end
 
   	def initialize(attributes = {})
     	@attributes = attributes
+
   	end
 
 end

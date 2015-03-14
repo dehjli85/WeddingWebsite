@@ -1,0 +1,40 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 col-md-offset-3" style="text-align:center">
+			<h3>Western Registries</h3>
+		
+			<div id="west" class="flag" onclick="replaceContents('west');">
+				<img src="<%= image_url('us_flag_large.jpg')%>" style="width:250px; height:400px; opacity:.8">
+			</div>
+		
+		</div>
+		<div class="col-md-3" style="text-align:center">
+			<h3>Eastern Registries</h3>			
+			<div id="east" class="flag" >
+				<a href="#" onclick="replaceContents('east');"><img src="<%= image_url('taiwan_flag_large.jpg')%>" style="width:250px; height:400px; opacity:.8"></a>
+			</div>
+				
+			
+		</div>				
+	</div>
+	<div class="collapse" id="collapseExample">
+				Test Test Test
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+	function replaceContents(id){
+		console.log(id);
+		if (id == 'east')
+			$('#'+id).html('<a href="http://en.wikipedia.org/wiki/Red_envelope"><img src="<%= image_url('chinese-hong-bao.gif')%>" style="width:250px;"></a>');
+		else
+			$('#'+id).html('<div><a href="http://www.crateandbarrel.com/Gift-Registry/dennis-li-and-katie-wang/r5300875"><img src="<%= image_url('crate_and_barrel.jpeg')%>" style="width:250px;"></a></div><div><a href="http://www.amazon.com/registry/wedding/BKQ00BEZ8X28"><img src="<%= image_url('amazon.jpeg')%>" style="width:250px;"></a></div>');
+	}
+
+</script>
+
+
+
