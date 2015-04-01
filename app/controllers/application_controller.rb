@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 	#before_action :unlock_site
 
-	#before_action :require_login
+	before_action :require_login
 
 	def require_login
 		@current_user = (!session[:id].nil? && User.exists?(session[:id])) ? User.find(session[:id]) : nil
